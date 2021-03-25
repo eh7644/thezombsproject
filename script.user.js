@@ -10,4 +10,3 @@
 // @grant        none
 // ==/UserScript==
 
-// To-Do: Make the import other files from GitHub functionality work, as now they are not working. [SOLVED]
