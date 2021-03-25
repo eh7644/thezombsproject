@@ -1,5 +1,5 @@
 # thezombsproject
-A zombs.io script project, planning many features. Work in progress.
+A public, open-source, zombs.io script project, planning many features. Work in progress.
 
 ## Install Guide:
 
