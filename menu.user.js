@@ -12,7 +12,7 @@
 const menuHTML = 
 
 `
-<h1 class="menu menu-h1 menu-h1-title">./theZombsProject</h1>
+<h1 class="menu menu-h1 menu-h1-title">theZombsProject</h1>
 <a href="https://github.com/eh7644/thezombsproject">Contribute</a>
 <style>${window.tzp_imports.style}</style>
 
