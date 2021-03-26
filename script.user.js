@@ -327,6 +327,10 @@ Object.entries(game.ui.components.Leaderboard.leaderboardData).forEach((item => 
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeGoldMines();\">UpgradeGoldMines?</button>
 
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeHarvesters();\">Upgrade Harvesters?</button>
+<hr />
+<h3>Information</h3>
+<hr />
+<h4>If you want to work with us,</h4><a href="https://github.com/eh7644/thezombsproject">click here</a>
 `;
 window.SellWalls = function() {
     var entities = Game.currentGame.world.entities;
