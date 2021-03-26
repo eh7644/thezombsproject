@@ -1,5 +1,7 @@
 
-# thezombsproject: Private Server
+# thezombsproject: Custom Client
 
-Requires:
-- Up to date and working version of NodeJS
+## How To Use
+- Use a code hosting service, like Glitch or Replit
+- Make a new project, and make sure its a HTML webpage
+- Import all files from this folder into the project
