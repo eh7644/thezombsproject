@@ -1,5 +1,4 @@
-https://raw.githubusercontent.com/eh7644/thezombsproject/main/Drawing.jpeg
- ! [TZP Banner] (https://raw.githubusercontent.com/eh7644/thezombsproject/main/Drawing.jpeg "TZP Banner").
+![TZP Banner](https://raw.githubusercontent.com/eh7644/thezombsproject/main/Drawing.jpeg "TZP Banner")
 
 # thezombsproject
 A public, open-source, zombs.io script and custom client project planning many features.
