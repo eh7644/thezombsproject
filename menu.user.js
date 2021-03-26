@@ -285,6 +285,7 @@ Object.entries(game.ui.components.Leaderboard.leaderboardData).forEach((item => 
 <button class=\"btn btn-bluee\"style=\"width: 45%;\" onclick=\"scanServer();\">Scan Server</button>
 <button class=\"btn btn-bluee\"style=\"width: 45%;\" onclick=\"scanPlayers();\">Scan Player Names</button>
 <button class=\"btn btn-bluee\"style=\"width: 90%;\" onclick=\"leaderboardData();\">Scan Leaderboard Data</button>
+<button class="btn btn-bluee" style="width:90%" onclick="scanServers();">All Servers Data</button>
 <hr />
 <h3>Sell & Upgrade</h3>
 <hr />
@@ -614,4 +615,10 @@ window.UpgradeHarvesters = function() {
             })
         }
     }
+}
+
+window.scanServers = function(e) {
+  Object.values(game.options.servers).forEach((item => {
+    alert(JSON.stringify(item))
+  }))
 }
