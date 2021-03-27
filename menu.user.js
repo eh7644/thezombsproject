@@ -281,52 +281,52 @@ Object.entries(game.ui.components.Leaderboard.leaderboardData).forEach((item => 
 <hr />
 <h3>Scanning</h3>
 <hr />
-<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"var scanServer();\">Scan Server</button>
-<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"var scanPlayers();\">Scan Player Names</button>
-<button class=\"btn btn-bluee\" style=\"width: 90%;\" onclick=\"var leaderboardData();\">Scan Leaderboard Data</button>
-<button class=\"btn btn-bluee\" style=\"width:90%"\ onclick=\"var scanServers();\">All Servers Data</button>
+<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"scanServer();\">Scan Server</button>
+<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"scanPlayers();\">Scan Player Names</button>
+<button class=\"btn btn-bluee\" style=\"width: 90%;\" onclick=\"leaderboardData();\">Scan Leaderboard Data</button>
+<button class=\"btn btn-bluee\" style=\"width:90%"\ onclick=\"scanServers();\">All Servers Data</button>
 <hr />
 <h3>Sell & Upgrade</h3>
 <hr />
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellWalls();\">Sell Walls?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellWalls();\">Sell Walls?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellDoors();\">Sell Doors?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellDoors();\">Sell Doors?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellSlowTraps();\">Sell Slow Traps?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellSlowTraps();\">Sell Slow Traps?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellArrows();\">Sell Arrows?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellArrows();\">Sell Arrows?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellCannons();\">Sell Cannons?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellCannons();\">Sell Cannons?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellMelees();\">Sell Melees?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellMelees();\">Sell Melees?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellBombs();\">Sell Bombs?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellBombs();\">Sell Bombs?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellMages();\">Sell Mages?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellMages();\">Sell Mages?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellGoldMines();\">Sell Gold Mines?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellGoldMines();\">Sell Gold Mines?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellHarvesters();\">Sell Harvesters?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellHarvesters();\">Sell Harvesters?</button>
 <br><br>
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeWalls();\">Upgrade Walls?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeWalls();\">Upgrade Walls?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeDoors();\">Upgrade Doors?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeDoors();\">Upgrade Doors?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeSlowTraps();\">UpgradeSlowTraps?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeSlowTraps();\">UpgradeSlowTraps?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeArrows();\">Upgrade Arrows?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeArrows();\">Upgrade Arrows?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeCannons();\">Upgrade Cannons?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeCannons();\">Upgrade Cannons?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeMelees();\">Upgrade Melees?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeMelees();\">Upgrade Melees?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeBombs();\">Upgrade Bombs?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeBombs();\">Upgrade Bombs?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeMages();\">Upgrade Mages?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeMages();\">Upgrade Mages?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeGoldMines();\">UpgradeGoldMines?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeGoldMines();\">UpgradeGoldMines?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeHarvesters();\">Upgrade Harvesters?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeHarvesters();\">Upgrade Harvesters?</button>
 <hr />
 <h3>Information</h3>
 <hr />
