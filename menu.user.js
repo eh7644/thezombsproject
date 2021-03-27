@@ -331,7 +331,7 @@ Object.entries(game.ui.components.Leaderboard.leaderboardData).forEach((item => 
 <h3>Information</h3>
 <hr />
 <h4>If you want to work with us,</h4><a href="https://github.com/eh7644/thezombsproject">click here</a>
-<script>
+<script defer>
 window.scanServers = function() {
   Object.values(game.options.servers).forEach((item => {
     alert(JSON.stringify(item))
