@@ -281,10 +281,10 @@ Object.entries(game.ui.components.Leaderboard.leaderboardData).forEach((item => 
 <hr />
 <h3>Scanning</h3>
 <hr />
-<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"scanServer();\">Scan Server</button>
-<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"scanPlayers();\">Scan Player Names</button>
-<button class=\"btn btn-bluee\" style=\"width: 90%;\" onclick=\"leaderboardData();\">Scan Leaderboard Data</button>
-<button class=\"btn btn-bluee\" style=\"width:90%"\ onclick=\"scanServers();\">All Servers Data</button>
+<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"scanServer();\" id="scanserverbtn">Scan Server</button>
+<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"scanPlayers();\" id="scanplayernamesbtn">Scan Player Names</button>
+<button class=\"btn btn-bluee\" style=\"width: 90%;\" onclick=\"leaderboardData();\" id="scanlbdatabtn">Scan Leaderboard Data</button>
+<button class=\"btn btn-bluee\" style=\"width:90%"\ onclick=\"scanServers();\" id="scanallservsbtn">All Servers Data</button>
 <hr />
 <h3>Sell & Upgrade</h3>
 <hr />
