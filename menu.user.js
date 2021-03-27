@@ -8,12 +8,6 @@
 // @grant        none
 // ==/UserScript==
 
-window.scanServers = function() {
-  Object.values(game.options.servers).forEach((item => {
-    alert(JSON.stringify(item))
-  }))
-}
-
 let css = `
 .btn-bluee {
   background-color: #003cff;
@@ -250,11 +244,10 @@ function modm() {
       menus[i].style.display = "none";
     }
   } else {
-        zipz123.style.display = "none";
   };
 };
   document.getElementsByClassName("hud-zipp-grid")[0].innerHTML = `
-<div style="text-align:center"><br>
+<div "text-align:center"><br>
 <hr />
 <h3>Logs</h3>
   `;
@@ -285,60 +278,13 @@ Object.entries(game.ui.components.Leaderboard.leaderboardData).forEach((item => 
 
   document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <div style="text-align:center"><br>
-<hr />
-<h3>Scanning</h3>
-<hr />
-<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"scanServer();\">Scan Server</button>
-<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"scanPlayers();\">Scan Player Names</button>
-<button class=\"btn btn-bluee\" style=\"width: 90%;\" onclick=\"leaderboardData();\">Scan Leaderboard Data</button>
-<button class=\"btn btn-bluee\" style=\"width:90%"\ onclick=\"scanServers();\">All Servers Data</button>
-<hr />
-<h3>Sell & Upgrade</h3>
-<hr />
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellWalls();\">Sell Walls?</button>
+<script>
+window.scanServers = function() {
+  Object.values(game.options.servers).forEach((item => {
+    alert(JSON.stringify(item))
+  }))
+}
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellDoors();\">Sell Doors?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellSlowTraps();\">Sell Slow Traps?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellArrows();\">Sell Arrows?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellCannons();\">Sell Cannons?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellMelees();\">Sell Melees?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellBombs();\">Sell Bombs?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellMages();\">Sell Mages?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellGoldMines();\">Sell Gold Mines?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellHarvesters();\">Sell Harvesters?</button>
-<br><br>
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeWalls();\">Upgrade Walls?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeDoors();\">Upgrade Doors?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeSlowTraps();\">UpgradeSlowTraps?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeArrows();\">Upgrade Arrows?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeCannons();\">Upgrade Cannons?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeMelees();\">Upgrade Melees?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeBombs();\">Upgrade Bombs?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeMages();\">Upgrade Mages?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeGoldMines();\">UpgradeGoldMines?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeHarvesters();\">Upgrade Harvesters?</button>
-<hr />
-<h3>Information</h3>
-<hr />
-<h4>If you want to work with us,</h4><a href="https://github.com/eh7644/thezombsproject">click here</a>
-`;
 window.SellWalls = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
@@ -622,4 +568,60 @@ window.UpgradeHarvesters = function() {
         }
     }
 }
+</script>
+<hr />
+<h3>Scanning</h3>
+<hr />
+<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"window.scanServer();\">Scan Server</button>
+<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"window.scanPlayers();\">Scan Player Names</button>
+<button class=\"btn btn-bluee\" style=\"width: 90%;\" onclick=\"window.leaderboardData();\">Scan Leaderboard Data</button>
+<button class=\"btn btn-bluee\" style=\"width:90%"\ onclick=\"window.scanServers();\">All Servers Data</button>
+<hr />
+<h3>Sell & Upgrade</h3>
+<hr />
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellWalls();\">Sell Walls?</button>
+
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellDoors();\">Sell Doors?</button>
+
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellSlowTraps();\">Sell Slow Traps?</button>
+
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellArrows();\">Sell Arrows?</button>
+
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellCannons();\">Sell Cannons?</button>
+
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellMelees();\">Sell Melees?</button>
+
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellBombs();\">Sell Bombs?</button>
+
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellMages();\">Sell Mages?</button>
+
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellGoldMines();\">Sell Gold Mines?</button>
+
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellHarvesters();\">Sell Harvesters?</button>
+<br><br>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeWalls();\">Upgrade Walls?</button>
+
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeDoors();\">Upgrade Doors?</button>
+
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeSlowTraps();\">UpgradeSlowTraps?</button>
+
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeArrows();\">Upgrade Arrows?</button>
+
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeCannons();\">Upgrade Cannons?</button>
+
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeMelees();\">Upgrade Melees?</button>
+
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeBombs();\">Upgrade Bombs?</button>
+
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeMages();\">Upgrade Mages?</button>
+
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeGoldMines();\">UpgradeGoldMines?</button>
+
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeHarvesters();\">Upgrade Harvesters?</button>
+<hr />
+<h3>Information</h3>
+<hr />
+<h4>If you want to work with us,</h4><a href="https://github.com/eh7644/thezombsproject">click here</a>
+`;
+
 
