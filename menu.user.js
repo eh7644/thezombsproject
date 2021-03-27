@@ -251,7 +251,7 @@ function modm() {
 <hr />
 <h3>Logs</h3>
   `;
-window.scanServer = function(){
+var scanServer = function(){
     var current = []
 Object.entries(game.ui.getComponent('Leaderboard').leaderboardData).forEach((item => {
     current.push(item)
@@ -259,7 +259,7 @@ Object.entries(game.ui.getComponent('Leaderboard').leaderboardData).forEach((ite
 }))
     return JSON.stringify(current)
 }
-window.scanPlayers = function(){
+var scanPlayers = function(){
     var current = []
 Object.entries(game.ui.getComponent('Leaderboard').playerNames).forEach((item => {
     current.push(item)
@@ -267,7 +267,7 @@ Object.entries(game.ui.getComponent('Leaderboard').playerNames).forEach((item =>
 }))
     return JSON.stringify(current)
 }
-window.leaderboardData = function(){
+var leaderboardData = function(){
     var current = []
 Object.entries(game.ui.components.Leaderboard.leaderboardData).forEach((item => {
     current.push(item)
@@ -281,64 +281,64 @@ Object.entries(game.ui.components.Leaderboard.leaderboardData).forEach((item => 
 <hr />
 <h3>Scanning</h3>
 <hr />
-<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"window.scanServer();\">Scan Server</button>
-<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"window.scanPlayers();\">Scan Player Names</button>
-<button class=\"btn btn-bluee\" style=\"width: 90%;\" onclick=\"window.leaderboardData();\">Scan Leaderboard Data</button>
-<button class=\"btn btn-bluee\" style=\"width:90%"\ onclick=\"window.scanServers();\">All Servers Data</button>
+<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"var scanServer();\">Scan Server</button>
+<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"var scanPlayers();\">Scan Player Names</button>
+<button class=\"btn btn-bluee\" style=\"width: 90%;\" onclick=\"var leaderboardData();\">Scan Leaderboard Data</button>
+<button class=\"btn btn-bluee\" style=\"width:90%"\ onclick=\"var scanServers();\">All Servers Data</button>
 <hr />
 <h3>Sell & Upgrade</h3>
 <hr />
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellWalls();\">Sell Walls?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellWalls();\">Sell Walls?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellDoors();\">Sell Doors?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellDoors();\">Sell Doors?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellSlowTraps();\">Sell Slow Traps?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellSlowTraps();\">Sell Slow Traps?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellArrows();\">Sell Arrows?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellArrows();\">Sell Arrows?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellCannons();\">Sell Cannons?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellCannons();\">Sell Cannons?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellMelees();\">Sell Melees?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellMelees();\">Sell Melees?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellBombs();\">Sell Bombs?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellBombs();\">Sell Bombs?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellMages();\">Sell Mages?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellMages();\">Sell Mages?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellGoldMines();\">Sell Gold Mines?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellGoldMines();\">Sell Gold Mines?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"window.SellHarvesters();\">Sell Harvesters?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"var SellHarvesters();\">Sell Harvesters?</button>
 <br><br>
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeWalls();\">Upgrade Walls?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeWalls();\">Upgrade Walls?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeDoors();\">Upgrade Doors?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeDoors();\">Upgrade Doors?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeSlowTraps();\">UpgradeSlowTraps?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeSlowTraps();\">UpgradeSlowTraps?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeArrows();\">Upgrade Arrows?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeArrows();\">Upgrade Arrows?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeCannons();\">Upgrade Cannons?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeCannons();\">Upgrade Cannons?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeMelees();\">Upgrade Melees?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeMelees();\">Upgrade Melees?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeBombs();\">Upgrade Bombs?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeBombs();\">Upgrade Bombs?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeMages();\">Upgrade Mages?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeMages();\">Upgrade Mages?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeGoldMines();\">UpgradeGoldMines?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeGoldMines();\">UpgradeGoldMines?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"window.UpgradeHarvesters();\">Upgrade Harvesters?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"var UpgradeHarvesters();\">Upgrade Harvesters?</button>
 <hr />
 <h3>Information</h3>
 <hr />
 <h4>If you want to work with us,</h4><a href="https://github.com/eh7644/thezombsproject">click here</a>
 <script defer>
-window.scanServers = function() {
+var scanServers = function() {
   Object.values(game.options.servers).forEach((item => {
     alert(JSON.stringify(item))
   }))
 }
 
-window.SellWalls = function() {
+var SellWalls = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -352,7 +352,7 @@ window.SellWalls = function() {
         }
     }
 }
-window.SellDoors = function() {
+var SellDoors = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -366,7 +366,7 @@ window.SellDoors = function() {
         }
     }
 }
-window.SellSlowTraps = function() {
+var SellSlowTraps = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -380,7 +380,7 @@ window.SellSlowTraps = function() {
         }
     }
 }
-window.SellArrows = function() {
+var SellArrows = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -394,7 +394,7 @@ window.SellArrows = function() {
         }
     }
 }
-window.SellCannons = function() {
+var SellCannons = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -408,7 +408,7 @@ window.SellCannons = function() {
         }
     }
 }
-window.SellBombs = function() {
+var SellBombs = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -422,7 +422,7 @@ window.SellBombs = function() {
         }
     }
 }
-window.SellMages = function() {
+var SellMages = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -436,7 +436,7 @@ window.SellMages = function() {
         }
     }
 }
-window.SellMelees = function() {
+var SellMelees = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -450,7 +450,7 @@ window.SellMelees = function() {
         }
     }
 }
-window.SellGoldMines = function() {
+var SellGoldMines = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -464,7 +464,7 @@ window.SellGoldMines = function() {
         }
     }
 }
-window.SellHarvesters = function() {
+var SellHarvesters = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -480,7 +480,7 @@ window.SellHarvesters = function() {
 }
 
 
-window.UpgradeWalls = function() {
+var UpgradeWalls = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -494,7 +494,7 @@ window.UpgradeWalls = function() {
         }
     }
 }
-window.UpgradeDoors = function() {
+var UpgradeDoors = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -508,7 +508,7 @@ window.UpgradeDoors = function() {
         }
     }
 }
-window.UpgradeSlowTraps = function() {
+var UpgradeSlowTraps = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -523,7 +523,7 @@ window.UpgradeSlowTraps = function() {
     }
 }
 
-window.UpgradeArrows = function() {
+var UpgradeArrows = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -537,7 +537,7 @@ window.UpgradeArrows = function() {
         }
     }
 }
-window.UpgradeCannons = function() {
+var UpgradeCannons = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -551,7 +551,7 @@ window.UpgradeCannons = function() {
         }
     }
 }
-window.UpgradeBombs = function() {
+var UpgradeBombs = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -565,7 +565,7 @@ window.UpgradeBombs = function() {
         }
     }
 }
-window.UpgradeMages = function() {
+var UpgradeMages = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -579,7 +579,7 @@ window.UpgradeMages = function() {
         }
     }
 }
-window.UpgradeMelees = function() {
+var UpgradeMelees = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -593,7 +593,7 @@ window.UpgradeMelees = function() {
         }
     }
 }
-window.UpgradeGoldMines = function() {
+var UpgradeGoldMines = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -607,7 +607,7 @@ window.UpgradeGoldMines = function() {
         }
     }
 }
-window.UpgradeHarvesters = function() {
+var UpgradeHarvesters = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
