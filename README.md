@@ -16,7 +16,7 @@ A public, open-source, zombs.io script project planning many features.
 - Install Git for command line on your system.
 - In your terminal, type in "git clone https://github.com/eh7644/thezombsproject.git" to clone the repository.
 - Now click the Tampermonkey icon, and go to dashboard.
-- Then click 'Utilities', scroll down to "File" and import the script.user.js file you just got from the cloned repository
+- Then click 'Utilities', scroll down to 'File' and import the script.user.js file you just got from the cloned repository
 - You are done!
 
 
