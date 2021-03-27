@@ -8,6 +8,12 @@
 // @grant        none
 // ==/UserScript==
 
+window.scanServers = function() {
+  Object.values(game.options.servers).forEach((item => {
+    alert(JSON.stringify(item))
+  }))
+}
+
 let css = `
 .btn-bluee {
   background-color: #003cff;
@@ -617,8 +623,3 @@ window.UpgradeHarvesters = function() {
     }
 }
 
-window.scanServers = function(e) {
-  Object.values(game.options.servers).forEach((item => {
-    alert(JSON.stringify(item))
-  }))
-}
