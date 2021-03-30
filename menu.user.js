@@ -7,7 +7,6 @@
 // @match        zombs.io
 // @grant        none
 // ==/UserScript==
-
 let css = `
 .btn-bluee {
   background-color: #003cff;
@@ -171,16 +170,13 @@ color: #eee;
 cursor: pointer;
 }
 `;
-
 let styles = document.createElement("style");
 styles.appendChild(document.createTextNode(css2));
 document.head.appendChild(styles);
-        var menus = document.getElementsByClassName("hud-menu");
-
+var menus = document.getElementsByClassName("hud-menu");
 // class changing
 document.getElementsByClassName("hud-intro-form")[0].style.height = "300px";
 document.getElementsByClassName("hud-intro-play")[0].setAttribute("class", "btn btn-blue hud-intro-play");
-
 // spell icon
 let spell = document.createElement("div");
 spell.classList.add("hud-spell-icon");
@@ -191,7 +187,6 @@ spell.innerHTML = `<div class="hud-tooltip-menu-icon">
 spell.innerHTML = "Main";
 spell.classList.add("hud-zipp-icon");
 document.getElementsByClassName("hud-spell-icons")[0].appendChild(spell);
-
 //Menu for spell icon
 let modHTML = `
 <div class="hud-menu-zipp">
@@ -202,22 +197,21 @@ let modHTML = `
 `;
 document.body.insertAdjacentHTML("afterbegin", modHTML);
 let zipz123 = document.getElementsByClassName("hud-menu-zipp")[0];
-            var theTooltip = document.createElement("div");
-            theTooltip.innerHTML = `<div class="hud-tooltip-menu-icon">
+var theTooltip = document.createElement("div");
+theTooltip.innerHTML = `<div class="hud-tooltip-menu-icon">
                                        <h4>Scripts</h4>
                                     </div>`
 //Onclick
-document.getElementsByClassName("hud-zipp-icon")[0].addEventListener("click", function() {
-  if(zipz123.style.display == "none") {
-    zipz123.style.display = "block";
-    for(var i = 0; i < menus.length; i++) {
-      menus[i].style.display = "none";
-    }
-  } else {
-        zipz123.style.display = "none";
-  };
+document.getElementsByClassName("hud-zipp-icon")[0].addEventListener("click", function () {
+	if (zipz123.style.display == "none") {
+		zipz123.style.display = "block";
+		for (var i = 0; i < menus.length; i++) {
+			menus[i].style.display = "none";
+		}
+	} else {
+		zipz123.style.display = "none";
+	};
 });
-
 let _menu = document.getElementsByClassName("hud-menu-icon");
 let _spell = document.getElementsByClassName("hud-spell-icon");
 let allIcon = [
@@ -227,56 +221,28 @@ let allIcon = [
   _spell[0],
   _spell[1]
 ];
-
-allIcon.forEach(function(elem) {
-        elem.addEventListener("click", function() {
-                if(zipz123.style.display == "block") {
-                        zipz123.style.display = "none";
-                };
-        });
+allIcon.forEach(function (elem) {
+	elem.addEventListener("click", function () {
+		if (zipz123.style.display == "block") {
+			zipz123.style.display = "none";
+		};
+	});
 });
-
 // key to open and close
 function modm() {
-        if(zipz123.style.display == "none") {
-    zipz123.style.display = "block";
-    for(var i = 0; i < menus.length; i++) {
-      menus[i].style.display = "none";
-    }
-  } else {
-  };
+	if (zipz123.style.display == "none") {
+		zipz123.style.display = "block";
+		for (var i = 0; i < menus.length; i++) {
+			menus[i].style.display = "none";
+		}
+	} else {};
 };
-  document.getElementsByClassName("hud-zipp-grid")[0].innerHTML = `
+document.getElementsByClassName("hud-zipp-grid")[0].innerHTML = `
 <div "text-align:center"><br>
 <hr />
 <h3>Logs</h3>
   `;
-var scanServer = function(){
-    var current = []
-Object.entries(game.ui.getComponent('Leaderboard').leaderboardData).forEach((item => {
-    current.push(item)
-    alert(JSON.stringify(current) + "<br><br>")
-}))
-    return JSON.stringify(current)
-}
-var scanPlayers = function(){
-    var current = []
-Object.entries(game.ui.getComponent('Leaderboard').playerNames).forEach((item => {
-    current.push(item)
-    alert(JSON.stringify(current) + "<br><br>")
-}))
-    return JSON.stringify(current)
-}
-var leaderboardData = function(){
-    var current = []
-Object.entries(game.ui.components.Leaderboard.leaderboardData).forEach((item => {
-    current.push(item)
-    alert(JSON.stringify(current) + "<br><br>")
-}))
-    return JSON.stringify(current)
-}
-
-  document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
+document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <div style="text-align:center"><br>
 <hr />
 <h3>Scanning</h3>
@@ -333,6 +299,3 @@ Object.entries(game.ui.components.Leaderboard.leaderboardData).forEach((item => 
 <h4>If you want to work with us,</h4><a href="https://github.com/eh7644/thezombsproject">click here</a>
 </div>
 `;
-
-
-
