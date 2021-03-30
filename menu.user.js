@@ -196,20 +196,20 @@ let modHTML = `
 </div>
 `;
 document.body.insertAdjacentHTML("afterbegin", modHTML);
-let zipz123 = document.getElementsByClassName("hud-menu-zipp")[0];
+let zipz124 = document.getElementsByClassName("hud-menu-zipp")[0];
 var theTooltip = document.createElement("div");
 theTooltip.innerHTML = `<div class="hud-tooltip-menu-icon">
                                        <h4>Scripts</h4>
                                     </div>`
 //Onclick
 document.getElementsByClassName("hud-zipp-icon")[0].addEventListener("click", function () {
-	if (zipz123.style.display == "none") {
-		zipz123.style.display = "block";
+	if (zipz124.style.display == "none") {
+		zipz124.style.display = "block";
 		for (var i = 0; i < menus.length; i++) {
 			menus[i].style.display = "none";
 		}
 	} else {
-		zipz123.style.display = "none";
+		zipz124.style.display = "none";
 	};
 });
 let _menu = document.getElementsByClassName("hud-menu-icon");
@@ -223,15 +223,15 @@ let allIcon = [
 ];
 allIcon.forEach(function (elem) {
 	elem.addEventListener("click", function () {
-		if (zipz123.style.display == "block") {
-			zipz123.style.display = "none";
+		if (zipz124.style.display == "block") {
+			zipz124.style.display = "none";
 		};
 	});
 });
 // key to open and close
 function modm() {
-	if (zipz123.style.display == "none") {
-		zipz123.style.display = "block";
+	if (zipz124.style.display == "none") {
+		zipz124.style.display = "block";
 		for (var i = 0; i < menus.length; i++) {
 			menus[i].style.display = "none";
 		}
@@ -254,45 +254,45 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <hr />
 <h3>Sell & Upgrade</h3>
 <hr />
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellWalls();\" id="sellwallsbtn">Sell Walls?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellwallsbtn">Sell Walls?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellDoors();\" id="selldoorsbtn">Sell Doors?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="selldoorsbtn">Sell Doors?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellSlowTraps();\" id="selltrapsbtn">Sell Slow Traps?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="selltrapsbtn">Sell Slow Traps?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellArrows();\" id="sellarrowsbtn">Sell Arrows?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellarrowsbtn">Sell Arrows?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellCannons();\" id="sellcannonsbtn">Sell Cannons?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellcannonsbtn">Sell Cannons?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellMelees();\" id="sellmeleesbtn">Sell Melees?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellmeleesbtn">Sell Melees?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellBombs();\" id="sellbombsbtn">Sell Bombs?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellbombsbtn">Sell Bombs?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellMages();\" id="sellmagesbtn">Sell Mages?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellmagesbtn">Sell Mages?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellGoldMines();\" id="sellminesbtn">Sell Gold Mines?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellminesbtn">Sell Gold Mines?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellHarvesters();\" id="sellharvsbtn">Sell Harvesters?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellharvsbtn">Sell Harvesters?</button>
 <br><br>
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeWalls();\" id="upwallsbtn">Upgrade Walls?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upwallsbtn">Upgrade Walls?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeDoors();\" id="updoorsbtn">Upgrade Doors?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="updoorsbtn">Upgrade Doors?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeSlowTraps();\" id="uptrapsbtn">UpgradeSlowTraps?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="uptrapsbtn">UpgradeSlowTraps?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeArrows();\" id="uparrowsbtn">Upgrade Arrows?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="uparrowsbtn">Upgrade Arrows?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeCannons();\" id="upcannonsbtn">Upgrade Cannons?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upcannonsbtn">Upgrade Cannons?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeMelees();\" id="upmeleesbtn">Upgrade Melees?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upmeleesbtn">Upgrade Melees?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeBombs();\" id="upbombsbtn">Upgrade Bombs?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upbombsbtn">Upgrade Bombs?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeMages();\" id="upmagesbtn">Upgrade Mages?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upmagesbtn">Upgrade Mages?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeGoldMines();\" id="upminesbtn">UpgradeGoldMines?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upminesbtn">UpgradeGoldMines?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeHarvesters();\" id="upharvsbtn">Upgrade Harvesters?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upharvsbtn">Upgrade Harvesters?</button>
 <hr />
 <h3>Information</h3>
 <hr />
