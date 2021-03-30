@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TheZombsProject
 // @namespace    https://github.com/eh7644/thezombsproject/
-// @version      1.0.0
+// @version      1.6.7
 // @description  Instructions at the GitHub page on how to install and use it, aka https://github.com/eh7644/thezombsproject/blob/main/README.md
 // @author       thezombsproject
 // @match        zombs.io
@@ -66,6 +66,8 @@ const sell = type => {
 			}
 		}
 	}
+    game.ui.getComponent("PopupOverlay")
+        .showHint(`Sold ${type}s`, 3e3);
 }
 const upgrade = type => {
 	for (var uid in entities) {
@@ -178,7 +180,7 @@ addEventListener('load', function (e) {
 	document.querySelector('#scanlbdatabtn')
 		.addEventListener('click', scanPlayers);;
 	document.querySelector('#scanplayernamesbtn')
-		.addEventListener('click', scanPlayes)
+		.addEventListener('click', scanPlayers)
 	cfp.forEach((objc => {
 		document.querySelector(`#${objc.path}`)
 			.addEventListener('click', objc.function);
