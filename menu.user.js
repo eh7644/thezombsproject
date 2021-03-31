@@ -246,6 +246,7 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <div style="text-align:center"><br>
 <hr />
 <h3>Scanning</h3>
+<p>This is for scanning game data, specifically servers and leaderboard info</p>
 <hr />
 <button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"scanServer();\" id="scanserverbtn">Scan Server</button>
 <button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"scanPlayers();\" id="scanplayernamesbtn">Scan Player Names</button>
@@ -253,6 +254,7 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <button class=\"btn btn-bluee\" style=\"width:90%"\ onclick=\"scanServers();\" id="scanallservsbtn">All Servers Data</button>
 <hr />
 <h3>Sell & Upgrade</h3>
+<p>Automate selling and upgrading!</p>
 <hr />
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellwallsbtn">Sell Walls?</button>
 
@@ -298,4 +300,8 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <hr />
 <h4>If you want to work with us,</h4><a href="https://github.com/eh7644/thezombsproject">click here</a>
 </div>
+<hr />
+<h3>Miscellaneous</h3>
+<p>Coming Soon!</p>
+<hr />
 `;
