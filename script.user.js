@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TheZombsProject
 // @namespace    https://github.com/eh7644/thezombsproject/
-// @version      1.8.4
+// @version      1.8.7
 // @description  Instructions at the GitHub page on how to install and use it, aka https://github.com/eh7644/thezombsproject/blob/main/README.md
 // @author       thezombsproject
 // @match        zombs.io
@@ -57,7 +57,10 @@ var leaderboardData = function () {
 }
 
 const log = msg => {
-	document.querySelector('#activitylogs').append('\n\n\n' + msg)
+    let logElem = document.createElement('div')
+    logElem.innerHTML = `<br>${msg}`
+    logElem.class = "tzpLogDiv"
+	document.querySelector('#activitylogs').append(logElem)
 }
 
 const sell = type => {
@@ -75,7 +78,7 @@ const sell = type => {
 	}
     game.ui.getComponent("PopupOverlay")
         .showHint(`Sold ${type}s`, 3e3);
-	log('Sold towers with building type ' + type)
+	log('Sold towers with building type {[' + type + ']}')
 }
 const upgrade = type => {
 	for (var uid in entities) {
