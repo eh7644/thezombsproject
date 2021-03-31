@@ -345,8 +345,4 @@ addEventListener('load', function (e) {
 		.addEventListener('click', scanPlayers);;
 	document.querySelector('#scanplayernamesbtn')
 		.addEventListener('click', scanPlayers)
-	cfp.forEach((objc => {
-		document.querySelector(`#${objc.path}`)
-			.addEventListener('click', objc.function);
-	}));
 });
