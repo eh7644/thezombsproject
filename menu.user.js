@@ -255,7 +255,7 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h3>Sell & Upgrade</h3>
 <p>Selling and upgrading in one click!</p>
 <hr />
-<div style="text-align:initial;"><label style="display:inline-block;margin-right:10px;">Sell all except towers? </label><input type="checkbox" id="sellallbutchk" style="display:inline-block;"/></div>
+<div style="text-align:initial;" class="tzpExceptionDiv"><label style="display:inline-block;margin-right:10px;">Sell all except towers? </label><input type="checkbox" id="sellallbutchk" style="display:inline-block;"/></div>
 <hr>
 <br />
 <button class=\"btn btn-greenn\"style=\"width: 90%;\" id="sellallbtn">Sell All?</button>
@@ -270,7 +270,7 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellminesbtn">Sell Gold Mines?</button>
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellharvsbtn">Sell Harvesters?</button>
 <hr />
-<div style="text-align:initial;"><label style="display:inline-block;margin-right:10px;">Upgrade all except towers? </label><input type="checkbox" id="upallbutchk" style="display:inline-block;" /></div>
+<div style="text-align:initial;" class="tzpExceptionDiv"><label style="display:inline-block;margin-right:10px;">Upgrade all except towers? </label><input type="checkbox" id="upallbutchk" style="display:inline-block;" /></div>
 <hr />
 <br />
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upwallsbtn">Upgrade Walls?</button>
