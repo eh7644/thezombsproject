@@ -213,4 +213,7 @@ addEventListener('load', function (e) {
 		document.querySelector(`#${objc.path}`)
 			.addEventListener('click', objc.function);
 	}));
+	document.querySelectorAll('.tzpExceptionDiv').forEach((elem => {
+		elem.style.marginLeft = "50%"
+	}))
 });
