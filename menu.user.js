@@ -304,7 +304,7 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h4>If you want to work with us,</h4><a href="https://github.com/eh7644/thezombsproject">click here</a>
 </div>
 `;
-window.SellWalls = function() {
+var SellWalls = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -318,7 +318,7 @@ window.SellWalls = function() {
         }
     }
 }
-window.SellDoors = function() {
+var SellDoors = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -332,7 +332,7 @@ window.SellDoors = function() {
         }
     }
 }
-window.SellSlowTraps = function() {
+var SellSlowTraps = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -346,7 +346,7 @@ window.SellSlowTraps = function() {
         }
     }
 }
-window.SellArrows = function() {
+var SellArrows = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -360,7 +360,7 @@ window.SellArrows = function() {
         }
     }
 }
-window.SellCannons = function() {
+var SellCannons = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -374,7 +374,7 @@ window.SellCannons = function() {
         }
     }
 }
-window.SellBombs = function() {
+var SellBombs = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -388,7 +388,7 @@ window.SellBombs = function() {
         }
     }
 }
-window.SellMages = function() {
+var SellMages = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -402,7 +402,7 @@ window.SellMages = function() {
         }
     }
 }
-window.SellMelees = function() {
+var SellMelees = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -416,7 +416,7 @@ window.SellMelees = function() {
         }
     }
 }
-window.SellGoldMines = function() {
+var SellGoldMines = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -430,7 +430,7 @@ window.SellGoldMines = function() {
         }
     }
 }
-window.SellHarvesters = function() {
+var SellHarvesters = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -446,7 +446,7 @@ window.SellHarvesters = function() {
 }
 
 
-window.UpgradeWalls = function() {
+var UpgradeWalls = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -460,7 +460,7 @@ window.UpgradeWalls = function() {
         }
     }
 }
-window.UpgradeDoors = function() {
+var UpgradeDoors = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -474,7 +474,7 @@ window.UpgradeDoors = function() {
         }
     }
 }
-window.UpgradeSlowTraps = function() {
+var UpgradeSlowTraps = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -489,7 +489,7 @@ window.UpgradeSlowTraps = function() {
     }
 }
 
-window.UpgradeArrows = function() {
+var UpgradeArrows = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -503,7 +503,7 @@ window.UpgradeArrows = function() {
         }
     }
 }
-window.UpgradeCannons = function() {
+var UpgradeCannons = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -517,7 +517,7 @@ window.UpgradeCannons = function() {
         }
     }
 }
-window.UpgradeBombs = function() {
+var UpgradeBombs = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -531,7 +531,7 @@ window.UpgradeBombs = function() {
         }
     }
 }
-window.UpgradeMages = function() {
+var UpgradeMages = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -545,7 +545,7 @@ window.UpgradeMages = function() {
         }
     }
 }
-window.UpgradeMelees = function() {
+var UpgradeMelees = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -559,7 +559,7 @@ window.UpgradeMelees = function() {
         }
     }
 }
-window.UpgradeGoldMines = function() {
+var UpgradeGoldMines = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
@@ -573,7 +573,7 @@ window.UpgradeGoldMines = function() {
         }
     }
 }
-window.UpgradeHarvesters = function() {
+var UpgradeHarvesters = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
