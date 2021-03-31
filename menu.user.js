@@ -240,6 +240,9 @@ document.getElementsByClassName("hud-zipp-grid")[0].innerHTML = `
 <div "text-align:center"><br>
 <hr />
 <h3>Logs</h3>
+<div id="activitylogs">
+</div>
+</div>
   `;
 document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <div style="text-align:center"><br>
