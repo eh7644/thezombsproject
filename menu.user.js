@@ -253,8 +253,9 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <button class=\"btn btn-bluee\" style=\"width:90%"\ onclick=\"scanServers();\" id="scanallservsbtn">All Servers Data</button>
 <hr />
 <h3>Sell & Upgrade</h3>
-<p>Automate selling and upgrading!</p>
+<p>Selling and upgrading in one click!</p>
 <hr />
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellallbtn">Sell All?</button>
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellwallsbtn">Sell Walls?</button>
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="selldoorsbtn">Sell Doors?</button>
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="selltrapsbtn">Sell Slow Traps?</button>
