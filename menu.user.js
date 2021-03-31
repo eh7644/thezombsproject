@@ -299,9 +299,9 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h3>Information</h3>
 <hr />
 <h4>If you want to work with us,</h4><a href="https://github.com/eh7644/thezombsproject">click here</a>
-</div>
 <hr />
 <h3>Miscellaneous</h3>
 <p>Coming Soon!</p>
 <hr />
+</div>
 `;
