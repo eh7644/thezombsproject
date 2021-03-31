@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TheZombsProject
 // @namespace    https://github.com/eh7644/thezombsproject/
-// @version      1.7.9
+// @version      1.8.2
 // @description  Instructions at the GitHub page on how to install and use it, aka https://github.com/eh7644/thezombsproject/blob/main/README.md
 // @author       thezombsproject
 // @match        zombs.io
@@ -25,6 +25,7 @@ var scanServers = function () {
 			alert(JSON.stringify(item))
 		}))
 }
+
 var scanServer = function () {
 	var current = []
 	Object.entries(game.ui.getComponent('Leaderboard')
@@ -54,6 +55,11 @@ var leaderboardData = function () {
 		}))
 	return JSON.stringify(current)
 }
+
+const log = msg => {
+	document.querySelector('#activitylog').append('\n' + msg)
+}
+
 const sell = type => {
 	var SellArrows = function () {
 		for (var uid in entities) {
@@ -69,6 +75,7 @@ const sell = type => {
 	}
     game.ui.getComponent("PopupOverlay")
         .showHint(`Sold ${type}s`, 3e3);
+	log('Sold towers with building type ' + type)
 }
 const upgrade = type => {
 	for (var uid in entities) {
@@ -81,6 +88,7 @@ const upgrade = type => {
 			})
 		}
 	}
+	log('Upgraded towers with building type ' + type)
 }
 
 const sellAllBut = type => {
@@ -94,6 +102,7 @@ const sellAllBut = type => {
 			})
 		}
 	}
+	log('Sold all but towers with building type ' + type)
 }
 
 const upgradeAllBut = type => {
@@ -107,6 +116,7 @@ const upgradeAllBut = type => {
 			})
 		}
 	}
+	log('Upgraded all but towers with building type ' + type)
 }
 
 const cfp = [{
@@ -200,6 +210,7 @@ const cfp = [{
 		upgrade("Harvester")
 	}
 }]
+
 addEventListener('load', function (e) {
 	document.querySelector('#scanallservsbtn')
 		.addEventListener('click', scanServers);
@@ -213,5 +224,5 @@ addEventListener('load', function (e) {
 		document.querySelector(`#${objc.path}`)
 			.addEventListener('click', objc.function);
 	}));
-
+	log('Initialized script')
 });
