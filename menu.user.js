@@ -241,7 +241,7 @@ document.getElementsByClassName("hud-zipp-grid")[0].innerHTML = `
 <hr />
 <h3>Logs</h3>
 <hr />
-<div id="activitylogs">
+<div id="activitylogs" style="overflow:scroll;">
 </div>
 </div>
   `;
