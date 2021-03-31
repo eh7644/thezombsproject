@@ -7,7 +7,6 @@
 // @match        zombs.io
 // @require      https://github.com/eh7644/thezombsproject/raw/main/menu.user.js
 // ==/UserScript==
-/*
 const onEnterWorld = () => {
 	window.onerror = function (e) {
 		game.ui.getComponent("PopupOverlay")
@@ -15,7 +14,6 @@ const onEnterWorld = () => {
 	};
 }
 game.network.addEnterWorldHandler(onEnterWorld);
-*/
 let entities;
 setInterval(() => {
 	entities = game.world.entities;
@@ -55,6 +53,123 @@ var leaderboardData = function () {
 		}))
 	return JSON.stringify(current)
 }
+const sell = type => {
+	for (var uid in entities) {
+		if (!entities.hasOwnProperty(uid)) continue;
+			var obj = entities[uid];
+			if (obj.fromTick.model == type) {
+				Game.currentGame.network.sendRpc({
+					name: "DeleteBuilding",
+					uid: obj.fromTick.uid
+				})
+			}
+		}
+    game.ui.getComponent("PopupOverlay")
+        .showHint(`Sold ${type}s`, 3e3);
+}
+const upgrade = type => {
+	for (var uid in entities) {
+		if (!entities.hasOwnProperty(uid)) continue;
+		var obj = entities[uid]
+		if (obj.fromTick.model == type) {
+			Game.currentGame.network.sendRpc({
+				name: "UpgradeBuilding",
+				uid: obj.fromTick.uid
+			})
+		}
+	}
+}
+const cfp = [{
+	path: "sellwallsbtn",
+	function: () => {
+		sell("Wall")
+	}
+}, {
+	path: "selldoorsbtn",
+	function: () => {
+		sell("Door")
+	}
+}, {
+	path: "sellmagesbtn",
+	function: () => {
+		sell("MagicTower")
+	}
+}, {
+	path: "sellmeleesbtn",
+	function: () => {
+		sell("MeleeTower")
+	}
+}, {
+	path: "sellminesbtn",
+	function: () => {
+		sell("GoldMine")
+	}
+}, {
+	path: "sellbombsbtn",
+	function: () => {
+		sell("BombTower")
+	}
+}, {
+	path: "sellarrowsbtn",
+	function: () => {
+		sell("ArrowTower")
+	}
+}, {
+	path: "sellcannonsbtn",
+	function: () => {
+		sell("CannonTower")
+	}
+}, {
+	path: "sellharvsbtn",
+	function: () => {
+		sell("Harvester")
+	}
+}, {
+	path: "upwallsbtn",
+	function: () => {
+		upgrade("Wall")
+	}
+}, {
+	path: "updoorsbtn",
+	function: () => {
+		upgrade("Door")
+	}
+}, {
+	path: "upmagesbtn",
+	function: () => {
+		upgrade("MagicTower")
+	}
+}, {
+	path: "upmeleesbtn",
+	function: () => {
+		upgrade("MeleeTower")
+	}
+}, {
+	path: "upminesbtn",
+	function: () => {
+		upgrade("GoldMine")
+	}
+}, {
+	path: "upbombsbtn",
+	function: () => {
+		upgrade("BombTower")
+	}
+}, {
+	path: "uparrowsbtn",
+	function: () => {
+		upgrade("ArrowTower")
+	}
+}, {
+	path: "upcannonsbtn",
+	function: () => {
+		upgrade("CannonTower")
+	}
+}, {
+	path: "upharvsbtn",
+	function: () => {
+		upgrade("Harvester")
+	}
+}]
 addEventListener('load', function (e) {
 	document.querySelector('#scanallservsbtn')
 		.addEventListener('click', scanServers);
@@ -64,4 +179,8 @@ addEventListener('load', function (e) {
 		.addEventListener('click', scanPlayers);;
 	document.querySelector('#scanplayernamesbtn')
 		.addEventListener('click', scanPlayers)
+	cfp.forEach((objc => {
+		document.querySelector(`#${objc.path}`)
+			.addEventListener('click', objc.function);
+	}));
 });
