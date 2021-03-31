@@ -304,3 +304,286 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h4>If you want to work with us,</h4><a href="https://github.com/eh7644/thezombsproject">click here</a>
 </div>
 `;
+window.SellWalls = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "Wall") {
+            Game.currentGame.network.sendRpc({
+                name: "DeleteBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.SellDoors = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "Door") {
+            Game.currentGame.network.sendRpc({
+                name: "DeleteBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.SellSlowTraps = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "SlowTrap") {
+            Game.currentGame.network.sendRpc({
+                name: "DeleteBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.SellArrows = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "ArrowTower") {
+            Game.currentGame.network.sendRpc({
+                name: "DeleteBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.SellCannons = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "CannonTower") {
+            Game.currentGame.network.sendRpc({
+                name: "DeleteBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.SellBombs = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "BombTower") {
+            Game.currentGame.network.sendRpc({
+                name: "DeleteBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.SellMages = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "MagicTower") {
+            Game.currentGame.network.sendRpc({
+                name: "DeleteBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.SellMelees = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "MeleeTower") {
+            Game.currentGame.network.sendRpc({
+                name: "DeleteBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.SellGoldMines = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "GoldMine") {
+            Game.currentGame.network.sendRpc({
+                name: "DeleteBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.SellHarvesters = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "Harvester") {
+            Game.currentGame.network.sendRpc({
+                name: "DeleteBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+
+
+window.UpgradeWalls = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "Wall") {
+            Game.currentGame.network.sendRpc({
+                name: "UpgradeBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.UpgradeDoors = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "Door") {
+            Game.currentGame.network.sendRpc({
+                name: "UpgradeBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.UpgradeSlowTraps = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "SlowTrap") {
+            Game.currentGame.network.sendRpc({
+                name: "UpgradeBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+
+window.UpgradeArrows = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "ArrowTower") {
+            Game.currentGame.network.sendRpc({
+                name: "UpgradeBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.UpgradeCannons = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "CannonTower") {
+            Game.currentGame.network.sendRpc({
+                name: "UpgradeBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.UpgradeBombs = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "BombTower") {
+            Game.currentGame.network.sendRpc({
+                name: "UpgradeBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.UpgradeMages = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "MagicTower") {
+            Game.currentGame.network.sendRpc({
+                name: "UpgradeBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.UpgradeMelees = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "MeleeTower") {
+            Game.currentGame.network.sendRpc({
+                name: "UpgradeBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.UpgradeGoldMines = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "GoldMine") {
+            Game.currentGame.network.sendRpc({
+                name: "UpgradeBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
+window.UpgradeHarvesters = function() {
+    var entities = Game.currentGame.world.entities;
+    for (var uid in entities) {
+        if (!entities.hasOwnProperty(uid)) continue;
+
+        var obj = entities[uid];
+        if (obj.fromTick.model == "Harvester") {
+            Game.currentGame.network.sendRpc({
+                name: "UpgradeBuilding",
+                uid: obj.fromTick.uid
+            })
+        }
+    }
+}
