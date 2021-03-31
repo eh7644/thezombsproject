@@ -146,7 +146,6 @@ background: rgba(0, 0, 0, 0.2);
 .hud-spell-icons .hud-spell-icon[data-type="Zippity"]::before {
 background-image: url("https://cdn2.iconfinder.com/data/icons/atrous/512/hammer_tool-512.png");
 }
-
 .hud-menu-zipp .hud-the-tab {
 position: relative;
 height: 40px;
@@ -256,45 +255,27 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h3>Sell & Upgrade</h3>
 <p>Automate selling and upgrading!</p>
 <hr />
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellWalls();\">Sell Walls?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellDoors();\">Sell Doors?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellSlowTraps();\">Sell Slow Traps?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellArrows();\">Sell Arrows?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellCannons();\">Sell Cannons?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellMelees();\">Sell Melees?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellBombs();\">Sell Bombs?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellMages();\">Sell Mages?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellGoldMines();\">Sell Gold Mines?</button>
-
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" onclick=\"SellHarvesters();\">Sell Harvesters?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellwallsbtn">Sell Walls?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="selldoorsbtn">Sell Doors?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="selltrapsbtn">Sell Slow Traps?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellarrowsbtn">Sell Arrows?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellcannonsbtn">Sell Cannons?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellmeleesbtn">Sell Melees?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellbombsbtn">Sell Bombs?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellmagesbtn">Sell Mages?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellminesbtn">Sell Gold Mines?</button>
+<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellharvsbtn">Sell Harvesters?</button>
 <br><br>
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeWalls();\">Upgrade Walls?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeDoors();\">Upgrade Doors?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeSlowTraps();\">UpgradeSlowTraps?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeArrows();\">Upgrade Arrows?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeCannons();\">Upgrade Cannons?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeMelees();\">Upgrade Melees?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeBombs();\">Upgrade Bombs?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeMages();\">Upgrade Mages?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeGoldMines();\">UpgradeGoldMines?</button>
-
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeHarvesters();\">Upgrade Harvesters?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upwallsbtn">Upgrade Walls?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="updoorsbtn">Upgrade Doors?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="uptrapsbtn">UpgradeSlowTraps?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="uparrowsbtn">Upgrade Arrows?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upcannonsbtn">Upgrade Cannons?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upmeleesbtn">Upgrade Melees?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upbombsbtn">Upgrade Bombs?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upmagesbtn">Upgrade Mages?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upminesbtn">UpgradeGoldMines?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upharvsbtn">Upgrade Harvesters?</button>
 <hr />
 <h3>Miscellaneous</h3>
 <p>Coming Soon!</p>
@@ -304,286 +285,3 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h4>If you want to work with us,</h4><a href="https://github.com/eh7644/thezombsproject">click here</a>
 </div>
 `;
-window.SellWalls = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "Wall") {
-            Game.currentGame.network.sendRpc({
-                name: "DeleteBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.SellDoors = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "Door") {
-            Game.currentGame.network.sendRpc({
-                name: "DeleteBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.SellSlowTraps = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "SlowTrap") {
-            Game.currentGame.network.sendRpc({
-                name: "DeleteBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.SellArrows = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "ArrowTower") {
-            Game.currentGame.network.sendRpc({
-                name: "DeleteBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.SellCannons = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "CannonTower") {
-            Game.currentGame.network.sendRpc({
-                name: "DeleteBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.SellBombs = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "BombTower") {
-            Game.currentGame.network.sendRpc({
-                name: "DeleteBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.SellMages = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "MagicTower") {
-            Game.currentGame.network.sendRpc({
-                name: "DeleteBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.SellMelees = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "MeleeTower") {
-            Game.currentGame.network.sendRpc({
-                name: "DeleteBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.SellGoldMines = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "GoldMine") {
-            Game.currentGame.network.sendRpc({
-                name: "DeleteBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.SellHarvesters = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "Harvester") {
-            Game.currentGame.network.sendRpc({
-                name: "DeleteBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-
-
-window.UpgradeWalls = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "Wall") {
-            Game.currentGame.network.sendRpc({
-                name: "UpgradeBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.UpgradeDoors = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "Door") {
-            Game.currentGame.network.sendRpc({
-                name: "UpgradeBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.UpgradeSlowTraps = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "SlowTrap") {
-            Game.currentGame.network.sendRpc({
-                name: "UpgradeBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-
-window.UpgradeArrows = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "ArrowTower") {
-            Game.currentGame.network.sendRpc({
-                name: "UpgradeBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.UpgradeCannons = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "CannonTower") {
-            Game.currentGame.network.sendRpc({
-                name: "UpgradeBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.UpgradeBombs = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "BombTower") {
-            Game.currentGame.network.sendRpc({
-                name: "UpgradeBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.UpgradeMages = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "MagicTower") {
-            Game.currentGame.network.sendRpc({
-                name: "UpgradeBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.UpgradeMelees = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "MeleeTower") {
-            Game.currentGame.network.sendRpc({
-                name: "UpgradeBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.UpgradeGoldMines = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "GoldMine") {
-            Game.currentGame.network.sendRpc({
-                name: "UpgradeBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
-window.UpgradeHarvesters = function() {
-    var entities = Game.currentGame.world.entities;
-    for (var uid in entities) {
-        if (!entities.hasOwnProperty(uid)) continue;
-
-        var obj = entities[uid];
-        if (obj.fromTick.model == "Harvester") {
-            Game.currentGame.network.sendRpc({
-                name: "UpgradeBuilding",
-                uid: obj.fromTick.uid
-            })
-        }
-    }
-}
