@@ -255,7 +255,7 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h3>Sell & Upgrade</h3>
 <p>Selling and upgrading in one click!</p>
 <hr />
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellallbtn">Sell All?</button>
+<button class=\"btn btn-greenn\"style=\"width: 90%;\" id="sellallbtn">Sell All?</button>
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellwallsbtn">Sell Walls?</button>
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="selldoorsbtn">Sell Doors?</button>
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="selltrapsbtn">Sell Slow Traps?</button>
