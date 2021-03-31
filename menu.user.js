@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TheZombsProject: Menu
 // @namespace    https://github.com/eh7644/thezombsproject
-// @version      1.1.8
+// @version      1.3.5
 // @description  Script menu, script is installed at https://github.com/eh7644/thezombsproject/raw/main/script.user.js
 // @author       thezombsproject
 // @match        zombs.io
@@ -241,7 +241,7 @@ document.getElementsByClassName("hud-zipp-grid")[0].innerHTML = `
 <hr />
 <h3>Logs</h3>
 <hr />
-<div id="activitylogs" style="overflow:scroll;">
+<div id="activitylogs" style="overflow:scroll;width:100%;height:100%;" width="100%" height="100%">
 </div>
 </div>
   `;
