@@ -1,16 +1,20 @@
 // ==UserScript==
 // @name         TheZombsProject
 // @namespace    https://github.com/eh7644/thezombsproject/
-// @version      1.8.7
+// @version      1.9.1
 // @description  Instructions at the GitHub page on how to install and use it, aka https://github.com/eh7644/thezombsproject/blob/main/README.md
 // @author       thezombsproject
 // @match        zombs.io
 // @require      https://github.com/eh7644/thezombsproject/raw/main/menu.user.js
 // ==/UserScript==
+
+let sellAllExcept = false;
+
 const onEnterWorld = () => {
 	window.onerror = function (e) {
 		game.ui.getComponent("PopupOverlay")
-			.showHint(`An error occoured: ${e}`, 5e3)
+			.showHint(`An error occoured: ${JSON.stringify(e)}`, 5e3)
+		log(`Error, data: ${JSON.stringify(e)}`)
 	};
 }
 
@@ -228,4 +232,8 @@ addEventListener('load', function (e) {
 			.addEventListener('click', objc.function);
 	}));
 	log('Initialized script')
+	document.querySelector('#sellallbutchk').addEventListener('change', function() {
+		sellAllExcept = this.checked;
+	})
 });
+
