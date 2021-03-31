@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TheZombsProject: Menu
 // @namespace    https://github.com/eh7644/thezombsproject
-// @version      1.1.0
+// @version      1.1.8
 // @description  Script menu, script is installed at https://github.com/eh7644/thezombsproject/raw/main/script.user.js
 // @author       thezombsproject
 // @match        zombs.io
@@ -247,15 +247,15 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h3>Scanning</h3>
 <p>This is for scanning game data, specifically servers and leaderboard info</p>
 <hr />
-<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"scanServer();\" id="scanserverbtn">Scan Server</button>
-<button class=\"btn btn-bluee\" style=\"width: 45%;\" onclick=\"scanPlayers();\" id="scanplayernamesbtn">Scan Player Names</button>
-<button class=\"btn btn-bluee\" style=\"width: 90%;\" onclick=\"leaderboardData();\" id="scanlbdatabtn">Scan Leaderboard Data</button>
-<button class=\"btn btn-bluee\" style=\"width:90%"\ onclick=\"scanServers();\" id="scanallservsbtn">All Servers Data</button>
+<button class=\"btn btn-bluee\" style=\"width: 45%;\" id="scanserverbtn">Scan Server</button>
+<button class=\"btn btn-bluee\" style=\"width: 45%;\" id="scanplayernamesbtn">Scan Player Names</button>
+<button class=\"btn btn-bluee\" style=\"width: 90%;\" id="scanlbdatabtn">Scan Leaderboard Data</button>
+<button class=\"btn btn-bluee\" style=\"width:90%"\ id="scanallservsbtn">All Servers Data</button>
 <hr />
 <h3>Sell & Upgrade</h3>
 <p>Selling and upgrading in one click!</p>
 <hr />
-<div style="text-align:initial;" class="tzpExceptionDiv"><label style="display:inline-block;margin-right:10px;">Sell all except towers? </label><input type="checkbox" id="sellallbutchk" style="display:inline-block;"/></div>
+<div class="tzpExceptionDiv"><label style="display:inline-block;margin-right:10px;">Sell all except towers? </label><input type="checkbox" id="sellallbutchk" style="display:inline-block;"/></div>
 <hr>
 <br />
 <button class=\"btn btn-greenn\"style=\"width: 90%;\" id="sellallbtn">Sell All?</button>
