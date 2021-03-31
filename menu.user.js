@@ -255,6 +255,8 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h3>Sell & Upgrade</h3>
 <p>Selling and upgrading in one click!</p>
 <hr />
+<label>Sell all except towers? </label> <input type="checkbox" id="sellallbutchk" />
+<br>
 <button class=\"btn btn-greenn\"style=\"width: 90%;\" id="sellallbtn">Sell All?</button>
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellwallsbtn">Sell Walls?</button>
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="selldoorsbtn">Sell Doors?</button>
@@ -267,6 +269,8 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellminesbtn">Sell Gold Mines?</button>
 <button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellharvsbtn">Sell Harvesters?</button>
 <br><br>
+<label>Upgrade all except towers? </label> <input type="checkbox" id="upallbutchk" />
+<br>
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upwallsbtn">Upgrade Walls?</button>
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" id="updoorsbtn">Upgrade Doors?</button>
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" id="uptrapsbtn">UpgradeSlowTraps?</button>
