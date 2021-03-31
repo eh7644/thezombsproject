@@ -19,5 +19,8 @@ A public, open-source, zombs.io script project planning many features.
 - Then click `Utilities`, scroll down to `File` and import the script.user.js file you just got from the cloned repository
 - You are done!
 
+## How to use:
+
+*Coming Soon!*
 
 **Discord**: https://discord.gg/mv54x6qRAG
