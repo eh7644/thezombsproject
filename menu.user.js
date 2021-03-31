@@ -256,45 +256,45 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h3>Sell & Upgrade</h3>
 <p>Automate selling and upgrading!</p>
 <hr />
-<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellWalls();\">Sell Walls?</button>
+<button class=\"btn btn-bluee\"style=\"width: 45%;\" onclick=\"SellWalls();\">Sell Walls?</button>
 
-<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellDoors();\">Sell Doors?</button>
+<button class=\"btn btn-bluee\"style=\"width: 45%;\" onclick=\"SellDoors();\">Sell Doors?</button>
 
-<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellSlowTraps();\">Sell Slow Traps?</button>
+<button class=\"btn btn-bluee\"style=\"width: 45%;\" onclick=\"SellSlowTraps();\">Sell Slow Traps?</button>
 
-<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellArrows();\">Sell Arrows?</button>
+<button class=\"btn btn-bluee\"style=\"width: 45%;\" onclick=\"SellArrows();\">Sell Arrows?</button>
 
-<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellCannons();\">Sell Cannons?</button>
+<button class=\"btn btn-bluee\"style=\"width: 45%;\" onclick=\"SellCannons();\">Sell Cannons?</button>
 
-<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellMelees();\">Sell Melees?</button>
+<button class=\"btn btn-bluee\"style=\"width: 45%;\" onclick=\"SellMelees();\">Sell Melees?</button>
 
-<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellBombs();\">Sell Bombs?</button>
+<button class=\"btn btn-bluee\"style=\"width: 45%;\" onclick=\"SellBombs();\">Sell Bombs?</button>
 
-<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellMages();\">Sell Mages?</button>
+<button class=\"btn btn-bluee\"style=\"width: 45%;\" onclick=\"SellMages();\">Sell Mages?</button>
 
-<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellGoldMines();\">Sell Gold Mines?</button>
+<button class=\"btn btn-bluee\"style=\"width: 45%;\" onclick=\"SellGoldMines();\">Sell Gold Mines?</button>
 
-<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellHarvesters();\">Sell Harvesters?</button>
+<button class=\"btn btn-bluee\"style=\"width: 45%;\" onclick=\"SellHarvesters();\">Sell Harvesters?</button>
 <br><br>
-<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeWalls();\">Upgrade Walls?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeWalls();\">Upgrade Walls?</button>
 
-<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeDoors();\">Upgrade Doors?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeDoors();\">Upgrade Doors?</button>
 
-<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeSlowTraps();\">UpgradeSlowTraps?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeSlowTraps();\">UpgradeSlowTraps?</button>
 
-<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeArrows();\">Upgrade Arrows?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeArrows();\">Upgrade Arrows?</button>
 
-<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeCannons();\">Upgrade Cannons?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeCannons();\">Upgrade Cannons?</button>
 
-<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeMelees();\">Upgrade Melees?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeMelees();\">Upgrade Melees?</button>
 
-<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeBombs();\">Upgrade Bombs?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeBombs();\">Upgrade Bombs?</button>
 
-<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeMages();\">Upgrade Mages?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeMages();\">Upgrade Mages?</button>
 
-<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeGoldMines();\">UpgradeGoldMines?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeGoldMines();\">UpgradeGoldMines?</button>
 
-<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeHarvesters();\">Upgrade Harvesters?</button>
+<button class=\"btn btn-orangee\"style=\"width: 45%;\" onclick=\"UpgradeHarvesters();\">Upgrade Harvesters?</button>
 <hr />
 <h3>Miscellaneous</h3>
 <p>Coming Soon!</p>
