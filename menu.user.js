@@ -304,7 +304,7 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h4>If you want to work with us,</h4><a href="https://github.com/eh7644/thezombsproject">click here</a>
 </div>
 `;
-function SellWalls() {
+var SellWalls = function() {
     var entities = Game.currentGame.world.entities;
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
