@@ -7,6 +7,7 @@
 // @match        zombs.io
 // @require      https://github.com/eh7644/thezombsproject/raw/main/menu.user.js
 // ==/UserScript==
+/*
 const onEnterWorld = () => {
 	window.onerror = function (e) {
 		game.ui.getComponent("PopupOverlay")
@@ -14,6 +15,7 @@ const onEnterWorld = () => {
 	};
 }
 game.network.addEnterWorldHandler(onEnterWorld);
+*/
 let entities;
 setInterval(() => {
 	entities = game.world.entities;
