@@ -256,45 +256,45 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h3>Sell & Upgrade</h3>
 <p>Automate selling and upgrading!</p>
 <hr />
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellwallsbtn">Sell Walls?</button>
+<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellWalls();\">Sell Walls?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="selldoorsbtn">Sell Doors?</button>
+<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellDoors();\">Sell Doors?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="selltrapsbtn">Sell Slow Traps?</button>
+<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellSlowTraps();\">Sell Slow Traps?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellarrowsbtn">Sell Arrows?</button>
+<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellArrows();\">Sell Arrows?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellcannonsbtn">Sell Cannons?</button>
+<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellCannons();\">Sell Cannons?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellmeleesbtn">Sell Melees?</button>
+<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellMelees();\">Sell Melees?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellbombsbtn">Sell Bombs?</button>
+<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellBombs();\">Sell Bombs?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellmagesbtn">Sell Mages?</button>
+<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellMages();\">Sell Mages?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellminesbtn">Sell Gold Mines?</button>
+<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellGoldMines();\">Sell Gold Mines?</button>
 
-<button class=\"btn btn-greenn\"style=\"width: 45%;\" id="sellharvsbtn">Sell Harvesters?</button>
+<button class=\"btn btn-blue\"style=\"width: 45%;\" onclick=\"SellHarvesters();\">Sell Harvesters?</button>
 <br><br>
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upwallsbtn">Upgrade Walls?</button>
+<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeWalls();\">Upgrade Walls?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="updoorsbtn">Upgrade Doors?</button>
+<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeDoors();\">Upgrade Doors?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="uptrapsbtn">UpgradeSlowTraps?</button>
+<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeSlowTraps();\">UpgradeSlowTraps?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="uparrowsbtn">Upgrade Arrows?</button>
+<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeArrows();\">Upgrade Arrows?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upcannonsbtn">Upgrade Cannons?</button>
+<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeCannons();\">Upgrade Cannons?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upmeleesbtn">Upgrade Melees?</button>
+<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeMelees();\">Upgrade Melees?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upbombsbtn">Upgrade Bombs?</button>
+<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeBombs();\">Upgrade Bombs?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upmagesbtn">Upgrade Mages?</button>
+<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeMages();\">Upgrade Mages?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upminesbtn">UpgradeGoldMines?</button>
+<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeGoldMines();\">UpgradeGoldMines?</button>
 
-<button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upharvsbtn">Upgrade Harvesters?</button>
+<button class=\"btn btn-orange\"style=\"width: 45%;\" onclick=\"UpgradeHarvesters();\">Upgrade Harvesters?</button>
 <hr />
 <h3>Miscellaneous</h3>
 <p>Coming Soon!</p>
