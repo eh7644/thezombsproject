@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TheZombsProject
 // @namespace    https://github.com/eh7644/thezombsproject/
-// @version      1.7.0
+// @version      1.7.2
 // @description  Instructions at the GitHub page on how to install and use it, aka https://github.com/eh7644/thezombsproject/blob/main/README.md
 // @author       thezombsproject
 // @match        zombs.io
@@ -13,6 +13,7 @@ const onEnterWorld = () => {
 			.showHint(`An error occoured: ${e}`, 5e3)
 	};
 }
+
 game.network.addEnterWorldHandler(onEnterWorld);
 let entities;
 setInterval(() => {
@@ -54,8 +55,9 @@ var leaderboardData = function () {
 	return JSON.stringify(current)
 }
 const sell = type => {
-	for (var uid in entities) {
-		if (!entities.hasOwnProperty(uid)) continue;
+	var SellArrows = function () {
+		for (var uid in entities) {
+			if (!entities.hasOwnProperty(uid)) continue;
 			var obj = entities[uid];
 			if (obj.fromTick.model == type) {
 				Game.currentGame.network.sendRpc({
@@ -64,6 +66,7 @@ const sell = type => {
 				})
 			}
 		}
+	}
     game.ui.getComponent("PopupOverlay")
         .showHint(`Sold ${type}s`, 3e3);
 }
@@ -79,6 +82,33 @@ const upgrade = type => {
 		}
 	}
 }
+
+const sellAllBut = type => {
+	for (var uid in entities) {
+		if (!entities.hasOwnProperty(uid)) continue;
+		var obj = entities[uid]
+		if (obj.fromTick.model !== type) {
+			Game.currentGame.network.sendRpc({
+				name: "DeleteBuilding",
+				uid: obj.fromTick.uid
+			})
+		}
+	}
+}
+
+const upgradeAllBut = type => {
+	for (var uid in entities) {
+		if (!entities.hasOwnProperty(uid)) continue;
+		var obj = entities[uid]
+		if (obj.fromTick.model !== type) {
+			Game.currentGame.network.sendRpc({
+				name: "UpgradeBuilding",
+				uid: obj.fromTick.uid
+			})
+		}
+	}
+}
+
 const cfp = [{
 	path: "sellwallsbtn",
 	function: () => {
