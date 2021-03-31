@@ -213,6 +213,5 @@ addEventListener('load', function (e) {
 		document.querySelector(`#${objc.path}`)
 			.addEventListener('click', objc.function);
 	}));
-    document.querySelector("#hud-menu-icons").innerHTML += '\n<div class="hud-menu-icon" data-type="tzp">TheZombsProject</div>'
 
 });
