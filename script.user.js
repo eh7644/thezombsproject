@@ -54,9 +54,8 @@ var leaderboardData = function () {
 	return JSON.stringify(current)
 }
 const sell = type => {
-	var SellArrows = function () {
-		for (var uid in entities) {
-			if (!entities.hasOwnProperty(uid)) continue;
+	for (var uid in entities) {
+		if (!entities.hasOwnProperty(uid)) continue;
 			var obj = entities[uid];
 			if (obj.fromTick.model == type) {
 				Game.currentGame.network.sendRpc({
@@ -65,7 +64,6 @@ const sell = type => {
 				})
 			}
 		}
-	}
     game.ui.getComponent("PopupOverlay")
         .showHint(`Sold ${type}s`, 3e3);
 }
