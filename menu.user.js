@@ -288,6 +288,11 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upminesbtn">UpgradeGoldMines?</button>
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upharvsbtn">Upgrade Harvesters?</button>
 <hr />
+<h3>Scan Players (main y features)</h3>
+<input class="scanpplinput" value="Player">
+<button class="scanpplbutton">Scan?</button>
+<p class = "idk"></p>
+<hr />
 <h3>Miscellaneous</h3>
 <p>Coming Soon!</p>
 <hr />
