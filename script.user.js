@@ -34,11 +34,13 @@ let wss = new WebSocket("wss://bolder-ribbon-cockatoo.glitch.me/");
 serverObj = {};
 wss.onmessage = (e) => {
     console.log(e);
-    if (e.data.includes('"m":')) return serverObj = JSON.parse(e.data).m;
-    for (let i = 0; i < document.getElementsByClassName("hud-intro-server")[0].length; i++) {
-        let id = document.getElementsByClassName("hud-intro-server")[0][i].value;
-        let target = serverObj[id].leaderboardDataObj.sort((a, b) => b.wave - a.wave)[0];
-        document.getElementsByClassName("hud-intro-server")[0][i].innerText = `${game.options.servers[id].name}, ppl: ${serverObj[id].population / 3.125}, ${target.wave} <= ${target.name}`;
+    if (e.data.includes('"m":')) {
+        serverObj = JSON.parse(e.data).m;
+        for (let i = 0; i < document.getElementsByClassName("hud-intro-server")[0].length; i++) {
+            let id = document.getElementsByClassName("hud-intro-server")[0][i].value;
+            let target = serverObj[id].leaderboardDataObj.sort((a, b) => b.wave - a.wave)[0];
+            document.getElementsByClassName("hud-intro-server")[0][i].innerText = `${game.options.servers[id].name}, ppl: ${serverObj[id].population / 3.125}, ${target.wave} <= ${target.name}`;
+        }
     }
 }
 
