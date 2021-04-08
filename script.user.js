@@ -49,7 +49,6 @@ let counter = (value = 0) => {
     return length = (value).toLocaleString().split(",").length - 1, v = (value / `1e${length * 3}`).toFixed(2) - "" + alp[length], n = !v ? "LIMIT" : isNaN(v - "") ? v: v - "";
 };
 
-
 find_1 = (targetName = "Player", findAll = false) => {
     let targets = {};
     let results = 0;
@@ -69,9 +68,67 @@ find_1 = (targetName = "Player", findAll = false) => {
     let sortedTargets = Object.values(targets).sort((a, b) => b.wave - a.wave);
     return [`All the results that includes ${targetName}, ${results}`, sortedTargets]
 }
+
+highestWave_1 = (moreOrEqualTo = 1000, lessOrEqualTo = Infinity) => {
+    let targets = {};
+    let results = 0;
+    Object.values(serverObj).forEach(server => {
+        if (!server.leaderboardDataObj) return;
+        server.leaderboardDataObj.forEach(result => {
+            if (result.wave >= moreOrEqualTo && result.wave <= lessOrEqualTo) {
+                targets[result.uid] = {server: server.id, name: result.name, wave: result.wave, score: result.score, uid: result.uid};
+                results++;
+            }
+        })
+    })
+    let sortedTargets = Object.values(targets).sort((a, b) => b.wave - a.wave);
+    return [`All the results for waves more or equal to ${moreOrEqualTo} and less or equal to ${lessOrEqualTo}, ${results}`, sortedTargets]
+}
+
+highestScore_1 = (moreOrEqualTo = 1000000000, lessOrEqualTo = Infinity) => {
+    let targets = {};
+    let results = 0;
+    Object.values(serverObj).forEach(server => {
+        if (!server.leaderboardDataObj) return;
+        server.leaderboardDataObj.forEach(result => {
+            if (result.score >= moreOrEqualTo && result.score <= lessOrEqualTo) {
+                targets[result.uid] = {server: server.id, name: result.name, wave: result.wave, score: result.score, uid: result.uid};
+                results++;
+            }
+        })
+    })
+    let sortedTargets = Object.values(targets).sort((a, b) => b.score - a.score);
+    return [`All the results for scores more or equal to ${moreOrEqualTo} and less or equal to ${lessOrEqualTo}, ${results}`, sortedTargets]
+}
+
 let scanByName = (name, scanEveryone = false) => {
-    let data = "{\n";
+    let result = find_1(name, scanEveryone)[0];
     let input = find_1(name, scanEveryone)[1];
+    let data = result + ", {\n";
+    for (let i in input) {
+        let e = input[i];
+        data += "    " + i + ", n: " + e.name + ", sid: " + e.server + ", w: " + counter(e.wave) + ", s: " + counter(e.score) + ",\n";
+    }
+    data += "}";
+    document.getElementsByClassName("idk")[0].innerText = data;
+}
+
+let highestwave = (highest) => {
+    let result = highestWave_1(highest)[0];
+    let input = highestWave_1(highest)[1];
+    let data = result + ", {\n";
+    for (let i in input) {
+        let e = input[i];
+        data += "    " + i + ", n: " + e.name + ", sid: " + e.server + ", w: " + counter(e.wave) + ", s: " + counter(e.score) + ",\n";
+    }
+    data += "}";
+    document.getElementsByClassName("idk")[0].innerText = data;
+}
+
+let highestscore = (highest) => {
+    let result = highestScore_1(highest)[0];
+    let input = highestScore_1(highest)[1];
+    let data = result + ", {\n";
     for (let i in input) {
         let e = input[i];
         data += "    " + i + ", n: " + e.name + ", sid: " + e.server + ", w: " + counter(e.wave) + ", s: " + counter(e.score) + ",\n";
@@ -85,6 +142,14 @@ let interval_1 = setInterval(() => {
         document.getElementsByClassName("scanpplbutton")[0].onclick = () => {
             let value = document.getElementsByClassName("scanpplinput")[0].value;
             scanByName(value);
+        }
+        document.getElementsByClassName("highestwavebutton")[0].onclick = () => {
+            let value = document.getElementsByClassName("scanpplinput2")[0].value;
+            highestwave(value);
+        }
+        document.getElementsByClassName("highestscorebutton")[0].onclick = () => {
+            let value = document.getElementsByClassName("scanpplinput3")[0].value;
+            highestscore(value);
         }
     }
 });
