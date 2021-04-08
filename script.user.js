@@ -30,6 +30,37 @@ var scanServers = function () {
 		}))
 }
 
+let wss = new WebSocket("wss://bolder-ribbon-cockatoo.glitch.me/");
+serverObj = {};
+wss.onmessage = (e) => {
+    console.log(e);
+    if (e.data.includes('"m":')) return serverObj = JSON.parse(e.data).m;
+        for (let i = 0; i < document.getElementsByClassName("hud-intro-server")[0].length; i++) {
+            let id = document.getElementsByClassName("hud-intro-server")[0][i].value;
+            let target = serverObj[id].leaderboardDataObj.sort((a, b) => b.wave - a.wave)[0];
+            document.getElementsByClassName("hud-intro-server")[0][i].innerText = `${game.options.servers[id].name}, ppl: ${serverObj[id].population / 3.125}, ${target.wave} <= ${target.name}`;
+        }
+}
+
+find_1 = (targetName = "Player", findAll = false) => {
+    let targets = {};
+    let results = 0;
+    Object.values(serverObj).forEach(server => {
+        if (!server.leaderboardDataObj) return;
+        server.leaderboardDataObj.forEach(result => {
+            if (result.name.toLowerCase().includes(targetName.toLowerCase()) && !findAll) {
+                targets[result.uid] = {server: server.id, name: result.name, wave: result.wave, score: result.score};
+                results++;
+            }
+            if (findAll) {
+                targets[result.uid] = {server: server.id, name: result.name, wave: result.wave, score: result.score};
+                results++;
+            }
+        })
+    })
+    return [`All the results that includes ${targetName}, ${results}`, targets]
+};
+
 var scanServer = function () {
 	var current = []
 	Object.entries(game.ui.getComponent('Leaderboard')
