@@ -77,12 +77,12 @@ let scanByName = (name, scanEveryone = false) => {
     data += "}";
     document.getElementsByClassName("idk")[0].innerText = data;
 }
-
-document.getElementsByClassName("scanpplbutton")[0].onclick = () => {
-    let value = document.getElementsByClassName("scanpplinput").value;
-    scanByName(value);
-}
-
+setTimeout(() => {
+    document.getElementsByClassName("scanpplbutton")[0].onclick = () => {
+        let value = document.getElementsByClassName("scanpplinput").value;
+        scanByName(value);
+    }
+}, 2000);
 var scanServer = function () {
     var current = []
     Object.entries(game.ui.getComponent('Leaderboard')
