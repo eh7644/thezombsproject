@@ -83,7 +83,7 @@ let interval_1 = setInterval(() => {
     if (document.getElementsByClassName("scanpplbutton")[0]) {
         clearInterval(interval_1);
         document.getElementsByClassName("scanpplbutton")[0].onclick = () => {
-            let value = document.getElementsByClassName("scanpplinput").value;
+            let value = document.getElementsByClassName("scanpplinput")[0].value;
             scanByName(value);
         }
     }
