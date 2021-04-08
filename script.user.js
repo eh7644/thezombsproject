@@ -77,12 +77,15 @@ let scanByName = (name, scanEveryone = false) => {
     data += "}";
     document.getElementsByClassName("idk")[0].innerText = data;
 }
-setTimeout(() => {
-    document.getElementsByClassName("scanpplbutton")[0].onclick = () => {
-        let value = document.getElementsByClassName("scanpplinput").value;
-        scanByName(value);
+let interval_1 = setInterval(() => {
+    if (document.getElementsByClassName("scanpplbutton")[0]) {
+        clearInterval(interval_1);
+        document.getElementsByClassName("scanpplbutton")[0].onclick = () => {
+            let value = document.getElementsByClassName("scanpplinput").value;
+            scanByName(value);
+        }
     }
-}, 2000);
+});
 var scanServer = function () {
     var current = []
     Object.entries(game.ui.getComponent('Leaderboard')
