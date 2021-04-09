@@ -24,13 +24,13 @@ setInterval(() => {
     entities = game.world.entities;
 }, 10)
 var scanServers = function () {
-    Object.values(game.options.servers)
+    Object.values(serverObj)
         .forEach((item => {
         alert(JSON.stringify(item))
     }))
 }
 
-let wss = new WebSocket("wss://bolder-ribbon-cockatoo.glitch.me/");
+wss = new WebSocket("wss://ViolentWateryNetworks.thethe4.repl.co/");
 serverObj = {};
 wss.onmessage = (e) => {
     console.log(e);
@@ -48,6 +48,19 @@ let alp = ["", "K", "M", "B", "T", "Q"];
 let counter = (value = 0) => {
     return length = (value).toLocaleString().split(",").length - 1, v = (value / `1e${length * 3}`).toFixed(2) - "" + alp[length], n = !v ? "LIMIT" : isNaN(v - "") ? v: v - "";
 };
+
+document.getElementsByClassName("hud-intro-guide")[0].innerHTML = `<hr />
+<h3>Scan Players (main y features)</h3>
+<input class="scanpplinput1" value="Player" type="text" placeholder="name">
+<button class="scanpplbutton1">Scan?</button>
+<br>
+<input class="scanpplinput21" value="1000" type="number" placeholder="highestwave">
+<button class="highestwavebutton1">Get hws?</button>
+<br>
+<input class="scanpplinput31" value="1000000000" type="number" placeholder="highestscore">
+<button class="highestscorebutton1">Get hss?</button>
+<p class = "idk1"></p>
+<hr />`
 
 find_1 = (targetName = "Player", findAll = false) => {
     let targets = {};
@@ -100,41 +113,65 @@ highestScore_1 = (moreOrEqualTo = 1000000000, lessOrEqualTo = Infinity) => {
     let sortedTargets = Object.values(targets).sort((a, b) => b.score - a.score);
     return [`All the results for scores more or equal to ${moreOrEqualTo} and less or equal to ${lessOrEqualTo}, ${results}`, sortedTargets]
 }
-
-let scanByName = (name, scanEveryone = false) => {
+let num = 0;
+onclickscannedserver = (server) => {
+    document.getElementsByClassName("hud-intro-server")[0].value = server;
+    game.ui.components.Leaderboard.leaderboardData = serverObj[server].leaderboardDataObj;
+    game.ui.components.Leaderboard.update();
+};
+let scanByName = (name, scanEveryone = false, idd = "") => {
     let result = find_1(name, scanEveryone)[0];
     let input = find_1(name, scanEveryone)[1];
     let data = result + ", {\n";
     for (let i in input) {
         let e = input[i];
-        data += "    " + i + ", n: " + e.name + ", sid: " + e.server + ", w: " + counter(e.wave) + ", s: " + counter(e.score) + ",\n";
+        let num_1 = num++;
+        data += `<div class="tag${num_1}" onclick="onclickscannedserver('${e.server}');">${"    " + i + ", n: " + e.name + ", sid: " + e.server + ", w: " + counter(e.wave) + ", s: " + counter(e.score) + ",\n"}</div>`;
     }
     data += "}";
-    document.getElementsByClassName("idk")[0].innerText = data;
+    let n = "idk" + idd;
+    console.log([n, idd, document.getElementsByClassName(n)[0]])
+    document.getElementsByClassName(n)[0].innerHTML = data;
 }
 
-let highestwave = (highest) => {
+let highestwave = (highest, idd = "") => {
     let result = highestWave_1(highest)[0];
     let input = highestWave_1(highest)[1];
     let data = result + ", {\n";
     for (let i in input) {
         let e = input[i];
-        data += "    " + i + ", n: " + e.name + ", sid: " + e.server + ", w: " + counter(e.wave) + ", s: " + counter(e.score) + ",\n";
+        let num_1 = num++;
+        data += `<div class="tag${num_1}" onclick="onclickscannedserver('${e.server}');">${"    " + i + ", n: " + e.name + ", sid: " + e.server + ", w: " + counter(e.wave) + ", s: " + counter(e.score) + ",\n"}</div>`;
     }
     data += "}";
-    document.getElementsByClassName("idk")[0].innerText = data;
+    let n = "idk" + idd;
+    document.getElementsByClassName(n)[0].innerHTML = data;
 }
 
-let highestscore = (highest) => {
+let highestscore = (highest, idd = "") => {
     let result = highestScore_1(highest)[0];
     let input = highestScore_1(highest)[1];
     let data = result + ", {\n";
     for (let i in input) {
         let e = input[i];
-        data += "    " + i + ", n: " + e.name + ", sid: " + e.server + ", w: " + counter(e.wave) + ", s: " + counter(e.score) + ",\n";
+        let num_1 = num++;
+        data += `<div class="tag${num_1}" onclick="onclickscannedserver('${e.server}');">${"    " + i + ", n: " + e.name + ", sid: " + e.server + ", w: " + counter(e.wave) + ", s: " + counter(e.score) + ",\n"}</div>`;
     }
     data += "}";
-    document.getElementsByClassName("idk")[0].innerText = data;
+    let n = "idk" + idd;
+    document.getElementsByClassName(n)[0].innerHTML = data;
+}
+document.getElementsByClassName("scanpplbutton1")[0].onclick = () => {
+    let value = document.getElementsByClassName("scanpplinput1")[0].value;
+    scanByName(value, false, "1");
+}
+document.getElementsByClassName("highestwavebutton1")[0].onclick = () => {
+    let value = document.getElementsByClassName("scanpplinput21")[0].value;
+    highestwave(value, "1");
+}
+document.getElementsByClassName("highestscorebutton1")[0].onclick = () => {
+    let value = document.getElementsByClassName("scanpplinput31")[0].value;
+    highestscore(value, "1");
 }
 let interval_1 = setInterval(() => {
     if (document.getElementsByClassName("scanpplbutton")[0]) {
@@ -152,7 +189,7 @@ let interval_1 = setInterval(() => {
             highestscore(value);
         }
     }
-});
+}, 100);
 var scanServer = function () {
     var current = []
     Object.entries(game.ui.getComponent('Leaderboard')
