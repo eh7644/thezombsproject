@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TheZombsProject
 // @namespace    https://github.com/eh7644/thezombsproject/
-// @version      1.9.4
+// @version      1.9.5
 // @description  Instructions at the GitHub page on how to install and use it, aka https://github.com/eh7644/thezombsproject/blob/main/README.md
 // @author       thezombsproject
 // @match        zombs.io
@@ -191,16 +191,6 @@ let interval_1 = setInterval(() => {
         }
     }
 }, 100);
-var scanServer = function () {
-    var current = []
-    Object.entries(game.ui.getComponent('Leaderboard')
-                   .leaderboardData)
-        .forEach((item => {
-        current.push(item)
-        alert(JSON.stringify(current) + "<br><br>")
-    }))
-    return JSON.stringify(current)
-}
 var scanPlayers = function () {
     var current = []
     Object.entries(game.ui.getComponent('Leaderboard')
@@ -454,8 +444,6 @@ const cfp = [{
 addEventListener('load', function (e) {
     document.querySelector('#scanallservsbtn')
         .addEventListener('click', scanServers);
-    document.querySelector('#scanserverbtn')
-        .addEventListener('click', scanServer);
     document.querySelector('#scanlbdatabtn')
         .addEventListener('click', scanPlayers);;
     document.querySelector('#scanplayernamesbtn')
