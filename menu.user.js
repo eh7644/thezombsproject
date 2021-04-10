@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TheZombsProject: Menu
 // @namespace    https://github.com/eh7644/thezombsproject
-// @version      1.3.5
+// @version      1.3.8
 // @description  Script menu, script is installed at https://github.com/eh7644/thezombsproject/raw/main/script.user.js
 // @author       thezombsproject
 // @match        zombs.io
@@ -251,8 +251,7 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <h3>Scanning</h3>
 <p>This is for scanning game data, specifically servers and leaderboard info</p>
 <hr />
-<button class=\"btn btn-bluee\" style=\"width: 45%;\" id="scanserverbtn">Scan Server</button>
-<button class=\"btn btn-bluee\" style=\"width: 45%;\" id="scanplayernamesbtn">Scan Player Names</button>
+<button class=\"btn btn-bluee\" style=\"width: 90%;\" id="scanplayernamesbtn">Scan Player Names</button>
 <button class=\"btn btn-bluee\" style=\"width: 90%;\" id="scanlbdatabtn">Scan Leaderboard Data</button>
 <button class=\"btn btn-bluee\" style=\"width:90%"\ id="scanallservsbtn">All Servers Data</button>
 <hr />
