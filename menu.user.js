@@ -276,6 +276,7 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <div class="tzpExceptionDiv"><label style="display:inline-block;margin-right:10px;">Upgrade all except towers? </label><input type="checkbox" id="upallbutchk" style="display:inline-block;" /></div>
 <hr />
 <br />
+<button class=\"btn btn-orangee\"style=\"width: 90%;\" id="upallbtn">Upgrade All?</button>
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upwallsbtn">Upgrade Walls?</button>
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" id="updoorsbtn">Upgrade Doors?</button>
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" id="uptrapsbtn">UpgradeSlowTraps?</button>
