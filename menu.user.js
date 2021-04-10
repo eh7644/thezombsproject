@@ -288,15 +288,15 @@ document.getElementsByClassName("hud-settings-grid")[0].innerHTML = `
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upminesbtn">UpgradeGoldMines?</button>
 <button class=\"btn btn-orangee\"style=\"width: 45%;\" id="upharvsbtn">Upgrade Harvesters?</button>
 <hr />
-<h3>Scan Players (main y features)</h3>
+<h3>Scan Players</h3>
 <input class="scanpplinput" value="Player" type="text" placeholder="name">
 <button class="scanpplbutton">Scan?</button>
 <br>
 <input class="scanpplinput2" value="1000" type="number" placeholder="highestwave">
-<button class="highestwavebutton">Get hws?</button>
+<button class="highestwavebutton">Get highest waves?</button>
 <br>
 <input class="scanpplinput3" value="1000000000" type="number" placeholder="highestscore">
-<button class="highestscorebutton">Get hss?</button>
+<button class="highestscorebutton">Get highest score?</button>
 <p class = "idk"></p>
 <hr />
 <h3>Miscellaneous</h3>
