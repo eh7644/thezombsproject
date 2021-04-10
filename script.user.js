@@ -9,6 +9,7 @@
 // ==/UserScript==
 
 let sellAllExcept = false;
+let upgradeAllExcept = false;
 
 const onEnterWorld = () => {
     window.addEventListener('error', function (e) {
@@ -262,7 +263,7 @@ const sellAllBut = type => {
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
         var obj = entities[uid]
-        if (obj.fromTick.model !== type) {
+        if (obj.fromTick.model !== type && obj.fromTick.model !== "GoldStash") {
             Game.currentGame.network.sendRpc({
                 name: "DeleteBuilding",
                 uid: obj.fromTick.uid
@@ -276,7 +277,7 @@ const upgradeAllBut = type => {
     for (var uid in entities) {
         if (!entities.hasOwnProperty(uid)) continue;
         var obj = entities[uid]
-        if (obj.fromTick.model !== type) {
+        if (obj.fromTick.model !== type && obj.fromTick.model !== "GoldStash") {
             Game.currentGame.network.sendRpc({
                 name: "UpgradeBuilding",
                 uid: obj.fromTick.uid
@@ -289,92 +290,164 @@ const upgradeAllBut = type => {
 const cfp = [{
     path: "sellwallsbtn",
     function: () => {
-        sell("Wall")
+        if(!sellAllExcept){
+            sell("Wall")
+        } else {
+            sellAllBut("Wall")
+        }
     }
 }, {
     path: "selldoorsbtn",
     function: () => {
-        sell("Door")
+        if(!sellAllExcept){
+            sell("Door")
+        } else {
+            sellAllBut("Door")
+        }
     }
 }, {
     path: "sellmagesbtn",
     function: () => {
-        sell("MagicTower")
+        if(!sellAllExcept){
+            sell("MagicTower")
+        } else {
+            sellAllBut("MagicTower")
+        }
     }
 }, {
     path: "sellmeleesbtn",
     function: () => {
-        sell("MeleeTower")
+        if(!sellAllExcept){
+            sell("MeleeTower")
+        } else {
+            sellAllBut("MeleeTower")
+        }
     }
 }, {
     path: "sellminesbtn",
     function: () => {
-        sell("GoldMine")
+        if(!sellAllExcept){
+            sell("GoldMine")
+        } else {
+            sellAllBut("GoldMine")
+        }
     }
 }, {
     path: "sellbombsbtn",
     function: () => {
-        sell("BombTower")
+        if(!sellAllExcept){
+            sell("BombTower")
+        } else {
+            sellAllBut("BombTower")
+        }
     }
 }, {
     path: "sellarrowsbtn",
     function: () => {
-        sell("ArrowTower")
+        if(!sellAllExcept){
+            sell("ArrowTower")
+        } else {
+            sellAllBut("ArrowTower")
+        }
     }
 }, {
     path: "sellcannonsbtn",
     function: () => {
-        sell("CannonTower")
+        if(!sellAllExcept){
+            sell("CannonTower")
+        } else {
+            sellAllBut("CannonTower")
+        }
     }
 }, {
     path: "sellharvsbtn",
     function: () => {
-        sell("Harvester")
+        if(!sellAllExcept){
+            sell("Harvester")
+        } else {
+            sellAllBut("Harvester")
+        }
     }
 }, {
     path: "upwallsbtn",
     function: () => {
-        upgrade("Wall")
+        if(!upgradeAllExcept){
+            upgrade("Wall")
+        } else {
+            upgradeAllBut("Wall")
+        }
     }
 }, {
     path: "updoorsbtn",
     function: () => {
-        upgrade("Door")
+        if(!upgradeAllExcept){
+            upgrade("Door")
+        } else {
+            upgradeAllBut("Door")
+        }
     }
 }, {
     path: "upmagesbtn",
     function: () => {
-        upgrade("MagicTower")
+        if(!upgradeAllExcept){
+            upgrade("MagicTower")
+        } else {
+            upgradeAllBut("MagicTower")
+        }
     }
 }, {
     path: "upmeleesbtn",
     function: () => {
-        upgrade("MeleeTower")
+        if(!upgradeAllExcept){
+            upgrade("MeleeTower")
+        } else {
+            upgradeAllBut("MeleeTower")
+        }
     }
 }, {
     path: "upminesbtn",
     function: () => {
-        upgrade("GoldMine")
+        if(!upgradeAllExcept){
+            upgrade("GoldMine")
+        } else {
+            upgradeAllBut("GoldMine")
+        }
     }
 }, {
     path: "upbombsbtn",
     function: () => {
-        upgrade("BombTower")
+        if(!upgradeAllExcept){
+            upgrade("BombTower")
+        } else {
+            upgradeAllBut("BombTower")
+        }
     }
 }, {
     path: "uparrowsbtn",
     function: () => {
-        upgrade("ArrowTower")
+        if(!upgradeAllExcept){
+            upgrade("ArrowTower")
+        } else {
+            upgradeAllBut("ArrowTower")
+        }
     }
 }, {
     path: "upcannonsbtn",
     function: () => {
-        upgrade("CannonTower")
+        if(!upgradeAllExcept){
+            upgrade("CannonTower")
+        } else {
+            upgradeAllBut("CannonTower")
+        }
     }
 }, {
     path: "upharvsbtn",
     function: () => {
-        upgrade("Harvester")
+        if(!upgradeAllExcept){
+            upgrade("Harvester")
+        } else {
+            upgradeAllBut("Harvester")
+        }
     }
 }]
 
@@ -394,5 +467,8 @@ addEventListener('load', function (e) {
     log('Initialized script')
     document.querySelector('#sellallbutchk').addEventListener('change', function() {
         sellAllExcept = this.checked;
+    })
+    document.querySelector('#upallbutchk').addEventListener('change', function() {
+        upgradeAllExcept = this.checked;
     })
 });
