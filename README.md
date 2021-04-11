@@ -1,4 +1,4 @@
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![TZP Banner Drawing](https://media.discordapp.net/attachments/813090581173501982/825044212646150204/Drawing.jpeg?width=400&height=200 "TZP Banner")
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ![TZP Banner Drawing](https://media.discordapp.net/attachments/813090581173501982/825044212646150204/Drawing.jpeg?width=400&height=200 "TZP Banner")
 
 # thezombsproject
 A public, open-source, zombs.io script project with many features.
